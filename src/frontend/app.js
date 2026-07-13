@@ -27,6 +27,26 @@ async function apiFetch(endpoint, options = {}) {
   return response.json();
 }
 
+function showConnectionIssue() {
+  const main = document.querySelector('.content-display');
+  if (!main || document.getElementById('connection-issue')) return;
+
+  const panel = document.createElement('section');
+  panel.className = 'connection-issue';
+  panel.id = 'connection-issue';
+  panel.innerHTML = `
+    <span class="connection-issue__eyebrow">Server connection unavailable</span>
+    <h2>ChurchBook can’t reach its local server.</h2>
+    <p>Open ChurchBook through the local server to load member, attendance, inventory, and finance data.</p>
+    <div class="connection-issue__steps">
+      <code>npm.cmd start</code>
+      <span>Then visit</span>
+      <a href="http://localhost:3000">http://localhost:3000</a>
+    </div>
+  `;
+  main.prepend(panel);
+}
+
 // --- App Initialization ---
 document.addEventListener('DOMContentLoaded', async () => {
   setupTabListeners();
@@ -70,7 +90,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   } catch (err) {
     console.error('Initialization error:', err);
-    alert('Failed to boot ChurchBook application. Please check backend is running.');
+    showConnectionIssue();
   }
 });
 

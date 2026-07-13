@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ChurchBook ChMS - A modern, secure, and sustainable multi-tenant Church Management System. Features database registries, secure payment gateways, and role-based unit dashboards.">
   <title>ChurchBook | Sustainable Church Management System</title>
-  <!-- Google Fonts: Plus Jakarta Sans and Inter -->
+  <!-- Typography: an editorial display face paired with a highly legible UI face -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <!-- Stylesheet & Favicon -->
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
@@ -21,7 +22,7 @@
   <!-- CONTROL PANEL: Simulation Context Switcher -->
   <header class="simulation-bar">
     <div class="sim-brand">
-      <div class="logo-mark">CB</div>
+      <div class="logo-mark"><img src="logo.png" alt="ChurchBook Logo"></div>
       <h1>ChurchBook</h1>
     </div>
     <div class="sim-controls">
@@ -48,7 +49,7 @@
       <!-- Mobile Header Row -->
       <div class="sidebar-mobile-header">
         <div class="mobile-brand">
-          <div class="logo-mark sm">CB</div>
+          <div class="logo-mark sm"><img src="logo.png" alt="ChurchBook Logo"></div>
           <span>ChurchBook</span>
         </div>
         <button class="hamburger-btn" id="mobile-hamburger" aria-label="Toggle Menu">
@@ -110,7 +111,7 @@
       <section class="tab-pane active" id="pane-overview">
         <div class="view-header">
           <h2>Dashboard Overview</h2>
-          <p id="overview-welcome">Welcome back, loading context...</p>
+          <p id="overview-welcome">A calm, clear view of your church community.</p>
         </div>
 
         <div class="kpi-grid">
@@ -190,7 +191,7 @@
             <h2>Members Registry</h2>
             <p>Database of all general members, department workers, and leaders.</p>
           </div>
-          <button class="btn btn-primary" id="btn-open-member-modal">➕ Register New Member</button>
+          <button class="btn btn-primary" id="btn-open-member-modal">Add a member</button>
         </div>
 
         <div class="search-filter-bar">
@@ -267,7 +268,7 @@
 
             <div class="flex-row justify-between align-center mt-2">
               <h4 id="active-sheet-title">Sunday Worship - 2026-07-10</h4>
-              <button class="btn btn-primary" id="btn-close-service" disabled>🔒 Close & Submit Checklist</button>
+              <button class="btn btn-primary" id="btn-close-service" disabled>Close attendance</button>
             </div>
 
             <div class="table-container mt-2">
@@ -321,12 +322,12 @@
             <h2>Inventory System</h2>
             <p>Manage church equipment, musical instruments, sound systems, and auditorium facilities.</p>
           </div>
-          <button class="btn btn-primary" id="btn-open-inventory-modal">➕ Add New Equipment</button>
+          <button class="btn btn-primary" id="btn-open-inventory-modal">Add equipment</button>
         </div>
 
         <div class="alert alert-info" id="inventory-restricted-banner" style="display:none;">
           <strong class="alert-title">Unit Specialization Enabled</strong>
-          <p>Inventory management is specialized for **Technical Unit**, **Sanctuary Keepers**, and **Music Unit**. Other roles are restricted to viewing only.</p>
+          <p>Inventory management is reserved for the Technical Unit, Sanctuary Keepers, and Music Unit. Other roles can view items only.</p>
         </div>
 
         <div class="grid-layout-3" id="inventory-items-grid">
@@ -394,7 +395,7 @@
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-full mt-2">🔒 Complete Secure Transaction</button>
+              <button type="submit" class="btn btn-primary btn-full mt-2">Continue securely</button>
             </form>
           </div>
 
@@ -434,10 +435,10 @@
 
           <!-- ACCESS DENIED BANNER -->
           <div class="glass-panel flex-2 flex-column align-center justify-center text-center p-3" id="finance-denied-panel" style="display:none;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
+            <div style="font-size: 3rem; margin-bottom: 1rem;">&#128274;</div>
             <h3>Vault Enforced - Access Restricted</h3>
             <p class="mt-1" style="max-width: 400px; margin: 0 auto; color: var(--text-muted);">
-              Ledger transactions, calculations, and projected balances are specialized under ChMS security rules for the **Senior Pastor** and members of the **Finance Committee** only.
+              Ledger transactions, calculations, and projected balances are available only to the Senior Pastor and Finance Committee.
             </p>
           </div>
         </div>
@@ -452,7 +453,7 @@
 
         <div class="alert alert-info" id="broadcast-restricted-banner" style="display:none;">
           <strong class="alert-title">Administrative Role Required</strong>
-          <p>Broadcast messaging is restricted to administrative leaders (**Senior Pastor** and department **HODs**). Regular members, ushers, and follow-up teams are locked out.</p>
+          <p>Broadcast messaging is reserved for administrative leaders: the Senior Pastor and department HODs.</p>
         </div>
 
         <div class="broadcast-layout" id="broadcast-content-area">
@@ -481,7 +482,7 @@
                 <textarea id="bc-message" placeholder="Type church bulletin, emergency alert, or meeting notification here..." class="form-input text-area" rows="6" required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-full mt-2">📡 Send Congregational Broadcast</button>
+              <button type="submit" class="btn btn-primary btn-full mt-2">Send broadcast</button>
             </form>
           </div>
 

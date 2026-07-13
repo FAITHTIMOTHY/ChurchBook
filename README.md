@@ -1,3 +1,15 @@
+## Run ChurchBook locally
+
+ChurchBook is a client-server application. Do not open `src/frontend/index.html` directly in a browser; the dashboard needs the local API server to retrieve its data.
+
+From the project folder, run:
+
+```powershell
+npm.cmd start
+```
+
+Then open [http://localhost:3000](http://localhost:3000) in your browser. For development with automatic backend reloads, use `npm.cmd run dev` instead.
+
 ### Slide 1
 ChuchBook ChMS {Logo}
 
@@ -167,4 +179,3 @@ Individual & Church Profile:
 Individual:
 The individual profile would have a profile of every member, which would include; name, address, profile picture, email, phone, DoB (Year excluded), attendance record, status (active or inactive. Anyone absent for a month is  tagged inactive.), unit, position.
 Full Profile of every member can be accessed by the senior Pastor, others would have some level of access e.g ushering unit has access to attendance record alone.
-
